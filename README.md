@@ -11,3 +11,13 @@ docker run -d      --name db-for-mangosteen      -e POSTGRES_USER=mangosteen    
 ```
 git commit --amend 
 ```
+
+### 本地秘钥
+```bash
+EDITOR="code --wait" bin/rails credentials:edit
+```
+
+### 本地秘钥（环境）
+```bash
+EDITOR="code --wait" bin/rails credentials:edit
+```
