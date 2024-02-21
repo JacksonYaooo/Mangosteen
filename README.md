@@ -19,8 +19,7 @@ EDITOR="code --wait" bin/rails credentials:edit
 
 ### 本地秘钥（生产环境的）
 ```bash
-EDITOR="code --wait" bin/rails credentials:edit --e
-nvironment production
+EDITOR="code --wait" bin/rails credentials:edit --environment production
 
 // 里面的格式是必须有一个secret_key_base
 secret_key_base: xxx // 这一行必须,这个是从本地秘钥里的screat拿到的
