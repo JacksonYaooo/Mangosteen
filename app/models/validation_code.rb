@@ -6,6 +6,8 @@ class ValidationCode < ApplicationRecord
 
   enum kind: { sign_in: 0, reset_password: 1 }
 
+  attr_accessor :code  # 添加这一行
+
   def generate_code
     self.code = SecureRandom.random_number.to_s[2..7]
   end
