@@ -68,4 +68,4 @@ case $ans in
     ""     )  echo "no" ;;
 esac
 
-title '全部执行完毕
+title '全部执行完毕'
