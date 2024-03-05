@@ -5,11 +5,10 @@ db_container_name=db-for-mangosteen
 
 function set_env {
   name=$1
-   hint=$2
+  hint=$2
   [[ ! -z "${!name}" ]] && return
   while [ -z "${!name}" ]; do
-    echo "> 请输入 $name:"
-    [[ ! -z "$hint" ]] && echo "> 请输入 $name: $hint" || echo "> 请输入 $name:" 
+    [[ ! -z "$hint" ]] && echo "> 请输入 $name: $hint" || echo "> 请输入 $name:"
     read $name
   done
   sed -i "1s/^/export $name=${!name}\n/" ~/.bashrc
@@ -26,7 +25,7 @@ function title {
 title '设置远程机器的环境变量'
 set_env DB_HOST
 set_env DB_PASSWORD
-set_env RAILS_MASTER_KEY '请将 config/credentials/production.key 的内容复制到这里'
+set_env RAILS_MASTER_KEY
 
 title '创建数据库'
 if [ "$(docker ps -aq -f name=^${DB_HOST}$)" ]; then
@@ -69,4 +68,4 @@ case $ans in
     ""     )  echo "no" ;;
 esac
 
-title '全部执行完毕'
+title '全部执行完毕
